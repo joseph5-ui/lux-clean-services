@@ -1,0 +1,196 @@
+=====================================
+🚀 GUIDE DE DÉPLOIEMENT VERCEL
+Lux Clean Services Inc.
+=====================================
+
+📦 CONTENU DU PACKAGE:
+----------------------
+✅ index.html → Ton site principal
+✅ galerie.html → Ta galerie de photos
+✅ images/ → Dossier pour tes photos
+✅ vercel.json → Configuration Vercel
+✅ Ce guide!
+
+=====================================
+ÉTAPE 1: CRÉER UN COMPTE VERCEL
+=====================================
+
+1. Va sur: https://vercel.com
+2. Clique sur "Sign Up" (Inscription)
+3. Choisis "Continue with GitHub" (le plus simple)
+   OU crée un compte avec ton email
+
+✅ C'est GRATUIT pour toujours!
+
+=====================================
+ÉTAPE 2: PRÉPARER TES FICHIERS
+=====================================
+
+Option A: AVEC GITHUB (Recommandé - Mises à jour faciles)
+----------------------------------------------------------
+
+1. Crée un compte GitHub si tu n'en as pas: https://github.com
+2. Crée un nouveau repository (dépôt):
+   - Nom: "lux-clean-services-website"
+   - Public ou Private (ton choix)
+3. Upload tous les fichiers de ce dossier:
+   - index.html
+   - galerie.html
+   - vercel.json
+   - dossier images/ (avec tes photos dedans)
+
+4. Sur Vercel:
+   - Clique "Add New Project"
+   - Sélectionne "Import Git Repository"
+   - Choisis ton repository GitHub
+   - Clique "Deploy"
+   - TERMINÉ! 🎉
+
+Option B: UPLOAD DIRECT (Plus rapide mais moins flexible)
+----------------------------------------------------------
+
+1. Sur Vercel, clique "Add New Project"
+2. Choisis "Deploy with Vercel CLI" ou "Import Project"
+3. Glisse-dépose tout le dossier
+4. Clique "Deploy"
+5. TERMINÉ! 🎉
+
+=====================================
+ÉTAPE 3: AJOUTER TES PHOTOS
+=====================================
+
+MÉTHODE 1: Via GitHub (si tu as choisi Option A)
+-------------------------------------------------
+1. Va dans ton repository GitHub
+2. Clique sur le dossier "images"
+3. Clique "Add file" → "Upload files"
+4. Glisse tes photos
+5. Nomme-les comme indiqué dans images/README.txt
+6. Vercel va automatiquement redéployer! ✅
+
+MÉTHODE 2: Via Vercel Dashboard
+--------------------------------
+1. Va sur ton projet Vercel
+2. Onglet "Storage" ou "Files"
+3. Upload tes images dans le dossier images/
+
+MÉTHODE 3: Réupload complet
+----------------------------
+1. Ajoute tes photos dans le dossier images/ sur ton ordi
+2. Réupload tout le dossier sur Vercel
+3. Vercel va redéployer avec tes nouvelles images
+
+=====================================
+ÉTAPE 4: CONFIGURER TON DOMAINE
+=====================================
+
+🆓 DOMAINE GRATUIT VERCEL:
+---------------------------
+Vercel te donne automatiquement:
+https://ton-projet.vercel.app
+
+Tu peux le renommer:
+1. Va dans "Settings" de ton projet
+2. Change le nom du projet
+3. Ton URL devient: https://lux-clean-services.vercel.app
+
+💎 TON PROPRE DOMAINE (Optionnel):
+-----------------------------------
+Si tu as acheté cleanluxs.com ou luxcleanservices.com:
+
+1. Va dans "Settings" → "Domains"
+2. Ajoute ton domaine
+3. Vercel te donne des instructions DNS
+4. Configure chez ton registrar (GoDaddy, Namecheap, etc.)
+5. Attends 24-48h pour la propagation
+
+=====================================
+ÉTAPE 5: VÉRIFIER QUE TOUT FONCTIONNE
+=====================================
+
+✅ Checklist:
+-------------
+□ Le site s'affiche correctement
+□ Les formulaires fonctionnent (teste-les!)
+□ Les images s'affichent
+□ La galerie fonctionne
+□ Le site est responsive (teste sur mobile)
+□ EmailJS envoie bien les emails
+
+=====================================
+🎨 MODIFIER TES IMAGES PLUS TARD
+=====================================
+
+Si tu veux changer/ajouter des photos:
+
+1. Va dans ton dossier images/
+2. Ajoute/remplace les fichiers
+3. Si tu utilises GitHub:
+   - Commit et push les changements
+   - Vercel redéploie automatiquement!
+4. Si tu utilises upload direct:
+   - Réupload le dossier complet
+
+=====================================
+💡 CONSEILS IMPORTANTS
+=====================================
+
+📸 Format des images:
+- Format: JPG ou PNG
+- Taille max: 2-3 MB par image (compresse si plus)
+- Résolution: 1920x1080 max suffit pour le web
+- Nomme-les clairement: sofa-avant-apres.jpg
+
+⚡ Performance:
+- Compresse tes images avec: tinypng.com
+- Plus petites = site plus rapide!
+
+🔒 Sécurité:
+- Ne mets JAMAIS de mots de passe dans le code
+- Garde tes clés API EmailJS sécurisées
+
+=====================================
+🆘 AIDE & SUPPORT
+=====================================
+
+Problèmes courants:
+
+1. "Build Failed" / "Deployment Failed"
+   → Vérifie que tous les fichiers sont bien nommés
+   → Assure-toi qu'il n'y a pas de fautes dans vercel.json
+
+2. Images ne s'affichent pas
+   → Vérifie les chemins: /images/nom-fichier.jpg
+   → Assure-toi que les images sont bien dans le dossier images/
+
+3. Formulaires ne fonctionnent pas
+   → Vérifie ton compte EmailJS
+   → Vérifie que les templates existent
+
+4. Site ne se met pas à jour
+   → Force un redéploiement dans Vercel
+   → Vide le cache de ton navigateur (Ctrl+Shift+R)
+
+Documentation Vercel:
+https://vercel.com/docs
+
+=====================================
+🎉 FÉLICITATIONS!
+=====================================
+
+Ton site Lux Clean Services est maintenant EN LIGNE!
+
+Tu peux:
+✅ Partager le lien avec tes clients
+✅ L'ajouter sur tes cartes de visite
+✅ Le partager sur les réseaux sociaux
+✅ Le référencer sur Google My Business
+
+N'oublie pas de:
+- Tester tous les formulaires
+- Ajouter tes vraies photos
+- Vérifier que tout fonctionne sur mobile
+
+=====================================
+FIN DU GUIDE
+=====================================

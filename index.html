@@ -1,0 +1,2146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lux Clean Services Inc - Services professionnels de nettoyage résidentiel, commercial et entretien textile à Gatineau et Ottawa. Réservation en ligne, soumission gratuite.">
+    <meta name="keywords" content="nettoyage Gatineau, nettoyage Ottawa, nettoyage résidentiel, nettoyage commercial, entretien textile, deep cleaning, nettoyage tapis, nettoyage sofas">
+    <title>Lux Clean Services Inc | Nettoyage Professionnel Gatineau-Ottawa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #003D7A;
+            --primary-gold: #FFD700;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --text-dark: #2c3e50;
+            --text-gray: #6c757d;
+            --accent-teal: #20c997;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+
+        .logo span {
+            color: var(--primary-gold);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-blue);
+        }
+
+        .nav-cta {
+            background: var(--primary-gold);
+            color: var(--primary-blue);
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #0056b3 100%);
+            color: var(--white);
+            padding: 150px 2rem 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h100v100H0z" fill="none"/><path d="M50 10L90 90H10z" fill="rgba(255,215,0,0.05)"/></svg>') repeat;
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-accent {
+            color: var(--primary-gold);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-gold);
+            color: var(--primary-blue);
+        }
+
+        .btn-primary:hover {
+            background: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--white);
+            padding: 3rem 2rem;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 2rem;
+            background: var(--light-bg);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .service-card ul {
+            text-align: left;
+            margin-bottom: 1.5rem;
+            color: var(--text-gray);
+            list-style: none;
+        }
+
+        .service-card li {
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-teal);
+            font-weight: bold;
+        }
+
+        .btn-service {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-service:hover {
+            background: var(--primary-gold);
+            color: var(--primary-blue);
+            transform: scale(1.05);
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-blue), #0056b3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .feature-item h3 {
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        /* Gallery Preview */
+        .gallery-preview {
+            padding: 5rem 2rem;
+            background: var(--light-bg);
+        }
+
+        .gallery-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 250px;
+            background: var(--text-gray);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3rem;
+        }
+
+        .gallery-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,61,122,0.9);
+            color: var(--white);
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary-gold);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+
+        .testimonial-rating {
+            color: var(--primary-gold);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #0056b3 100%);
+            color: var(--white);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 2rem;
+            background: var(--light-bg);
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-info {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .contact-info h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--light-bg);
+            border-radius: 10px;
+        }
+
+        .contact-item-icon {
+            font-size: 1.5rem;
+            color: var(--primary-gold);
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-gold);
+            color: var(--primary-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--primary-gold);
+            color: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+
+        /* Page Sections */
+        .page-section {
+            padding: 5rem 2rem;
+            min-height: 50vh;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #0056b3 100%);
+            color: var(--white);
+            padding: 150px 2rem 80px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-detail {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+
+        .service-detail h2 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .service-detail h3 {
+            color: var(--primary-blue);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-detail ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .service-detail li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .service-detail li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-teal);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Booking Form */
+        .booking-form {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid var(--primary-blue);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .info-box h4 {
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .about-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .about-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .about-card ul {
+            list-style: none;
+        }
+
+        .about-card li {
+            padding: 0.5rem 0;
+            color: var(--text-gray);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .about-card li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary-gold);
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* Utility Classes */
+        .hidden {
+            display: none;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-2 {
+            margin-top: 2rem;
+        }
+
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">Lux<span>Clean</span> Services Inc.</div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#accueil" onclick="showSection('accueil')">Accueil</a></li>
+                <li><a href="#services" onclick="showSection('services')">Services</a></li>
+                <li><a href="#galerie" onclick="showSection('galerie')">Galerie</a></li>
+                <li><a href="#a-propos" onclick="showSection('a-propos')">À propos</a></li>
+                <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
+                <li><a href="#reservation" class="nav-cta" onclick="showSection('reservation')">Réserver maintenant</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="accueil" class="page-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Votre Partenaire de Confiance pour un <span class="hero-accent">Nettoyage Impeccable</span></h1>
+                <p>Services professionnels de nettoyage résidentiel, commercial et entretien textile à Gatineau et Ottawa</p>
+                <div class="hero-buttons">
+                    <a href="#reservation" class="btn btn-primary" onclick="showSection('reservation')">Prendre Rendez-vous</a>
+                    <a href="#soumission" class="btn btn-secondary" onclick="showSection('soumission')">Demande de Soumission</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <h3>100+</h3>
+                    <p>Clients Satisfaits</p>
+                </div>
+                <div class="stat-item">
+                    <h3>5★</h3>
+                    <p>Note Moyenne</p>
+                </div>
+                <div class="stat-item">
+                    <h3>5+</h3>
+                    <p>Années d'Expérience</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24h</h3>
+                    <p>Réponse Garantie</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services">
+            <h2 class="section-title">Nos Services Professionnels</h2>
+            <p class="section-subtitle">Des solutions complètes de nettoyage adaptées à tous vos besoins</p>
+            <div class="services-container">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Nettoyage Résidentiel</h3>
+                    <p>Un intérieur propre et sain pour votre famille</p>
+                    <ul>
+                        <li>Nettoyage complet de toutes les pièces</li>
+                        <li>Cuisine et salles de bain</li>
+                        <li>Dépoussiérage et aspiration</li>
+                        <li>Lavage des planchers</li>
+                    </ul>
+                    <a href="#services" class="btn-service" onclick="showSection('services')">En savoir plus</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Nettoyage Commercial</h3>
+                    <p>Un environnement professionnel impeccable</p>
+                    <ul>
+                        <li>Bureaux et espaces de travail</li>
+                        <li>Immeubles résidentiels</li>
+                        <li>Commerces et boutiques</li>
+                        <li>Services récurrents disponibles</li>
+                    </ul>
+                    <a href="#services" class="btn-service" onclick="showSection('services')">En savoir plus</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🛋️</div>
+                    <h3>Entretien Textile</h3>
+                    <p>Prolongez la vie de vos textiles</p>
+                    <ul>
+                        <li>Nettoyage de tapis et carpettes</li>
+                        <li>Sofas et fauteuils</li>
+                        <li>Matelas et oreillers</li>
+                        <li>Intérieur de voiture</li>
+                    </ul>
+                    <a href="#services" class="btn-service" onclick="showSection('services')">En savoir plus</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔨</div>
+                    <h3>Après Construction</h3>
+                    <p>Nettoyage post-rénovation complet</p>
+                    <ul>
+                        <li>Élimination de la poussière</li>
+                        <li>Nettoyage des fenêtres</li>
+                        <li>Surfaces et planchers</li>
+                        <li>Prêt pour emménagement</li>
+                    </ul>
+                    <a href="#services" class="btn-service" onclick="showSection('services')">En savoir plus</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>Nettoyage en Profondeur</h3>
+                    <p>Un grand ménage complet et minutieux</p>
+                    <ul>
+                        <li>Nettoyage détaillé complet</li>
+                        <li>Endroits difficiles d'accès</li>
+                        <li>Désinfection complète</li>
+                        <li>Idéal pour occasions spéciales</li>
+                    </ul>
+                    <a href="#services" class="btn-service" onclick="showSection('services')">En savoir plus</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔄</div>
+                    <h3>Services Récurrents</h3>
+                    <p>Entretien régulier sans souci</p>
+                    <ul>
+                        <li>Hebdomadaire</li>
+                        <li>Bi-hebdomadaire</li>
+                        <li>Mensuel</li>
+                        <li>Tarifs avantageux</li>
+                    </ul>
+                    <a href="#services" class="btn-service" onclick="showSection('services')">En savoir plus</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="why-choose">
+            <h2 class="section-title">Pourquoi Choisir Lux Clean Services?</h2>
+            <p class="section-subtitle">Notre engagement envers l'excellence et votre satisfaction</p>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <h3>Professionnalisme Garanti</h3>
+                    <p>Équipe formée et certifiée, assurance complète pour votre tranquillité d'esprit</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🌿</div>
+                    <h3>Produits Écologiques</h3>
+                    <p>Option de produits écologiques disponibles pour un nettoyage respectueux de l'environnement</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Service Rapide</h3>
+                    <p>Réponse en moins de 24h et intervention rapide selon vos disponibilités</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💯</div>
+                    <h3>Satisfaction 100%</h3>
+                    <p>Garantie de satisfaction ou nous revenons gratuitement</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎓</div>
+                    <h3>Expertise Reconnue</h3>
+                    <p>Techniciens certifiés en entretien textile et nettoyage professionnel</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💰</div>
+                    <h3>Tarifs Compétitifs</h3>
+                    <p>Prix transparents et compétitifs sans frais cachés</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Preview -->
+        <section class="gallery-preview">
+            <h2 class="section-title">Notre Travail en Images</h2>
+            <p class="section-subtitle">Découvrez la qualité de nos services à travers nos réalisations</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">🏠</div>
+                    <div class="gallery-label">Nettoyage Résidentiel</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">🏢</div>
+                    <div class="gallery-label">Projets Commerciaux</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">🛋️</div>
+                    <div class="gallery-label">Entretien Textile</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">✨</div>
+                    <div class="gallery-label">Avant / Après</div>
+                </div>
+            </div>
+            <div class="text-center mt-2">
+                <a href="#galerie" class="btn btn-primary" onclick="showSection('galerie')">Voir toute la galerie</a>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <h2 class="section-title">Ce Que Disent Nos Clients</h2>
+            <p class="section-subtitle">Votre satisfaction est notre priorité</p>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"Service exceptionnel! Mon appartement n'a jamais été aussi propre. L'équipe est professionnelle, ponctuelle et très minutieuse. Je recommande vivement!"</p>
+                    <p class="testimonial-author">— Marie-Claire D., Gatineau</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"Nous utilisons leurs services pour notre immeuble depuis 2 ans. Toujours impeccable, fiable et à l'écoute de nos besoins. Un partenaire de confiance!"</p>
+                    <p class="testimonial-author">— Jean-François L., Gestionnaire immobilier</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"Le nettoyage de nos sofas et tapis a dépassé mes attentes. Ils ont redonné vie à nos meubles. Service rapide et prix raisonnable!"</p>
+                    <p class="testimonial-author">— Sylvie P., Ottawa</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Prêt à Découvrir la Différence?</h2>
+                <p>Obtenez votre soumission gratuite en moins de 24 heures</p>
+                <div class="hero-buttons">
+                    <a href="#soumission" class="btn btn-primary" onclick="showSection('soumission')">Demander une Soumission</a>
+                    <a href="#contact" class="btn btn-secondary" onclick="showSection('contact')">Nous Contacter</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Services Page -->
+    <div id="services" class="page-content hidden">
+        <div class="page-header">
+            <h1>Nos Services Professionnels</h1>
+            <p>Des solutions complètes pour tous vos besoins de nettoyage</p>
+        </div>
+        <section class="page-section">
+            <div class="content-container">
+                <div class="service-detail">
+                    <h2>🏠 Nettoyage Résidentiel</h2>
+                    <p>Profitez d'un environnement propre et sain pour vous et votre famille. Notre équipe prend soin de votre maison comme si c'était la nôtre.</p>
+                    <h3>Services Inclus:</h3>
+                    <ul>
+                        <li>Dépoussiérage complet de toutes les surfaces</li>
+                        <li>Nettoyage approfondi de la cuisine (comptoirs, électroménagers, évier)</li>
+                        <li>Salles de bain complètes (toilettes, douche, baignoire, lavabos)</li>
+                        <li>Aspiration de tous les planchers et tapis</li>
+                        <li>Lavage des planchers (bois franc, céramique, vinyle)</li>
+                        <li>Nettoyage des miroirs et vitres intérieures</li>
+                        <li>Vidage des poubelles</li>
+                        <li>Chambres à coucher et espaces de vie</li>
+                    </ul>
+                    <a href="#reservation" class="btn btn-primary mt-2" onclick="showSection('reservation')">Réserver ce service</a>
+                </div>
+
+                <div class="service-detail">
+                    <h2>🏢 Nettoyage Commercial</h2>
+                    <p>Maintenez un environnement professionnel impeccable qui impressionne vos clients et motive vos employés.</p>
+                    <h3>Services Inclus:</h3>
+                    <ul>
+                        <li>Bureaux et postes de travail</li>
+                        <li>Salles de conférence et espaces communs</li>
+                        <li>Cuisinettes et salles de pause</li>
+                        <li>Toilettes et sanitaires</li>
+                        <li>Corridors et cages d'escalier</li>
+                        <li>Aires de réception et halls d'entrée</li>
+                        <li>Nettoyage des vitres et portes vitrées</li>
+                        <li>Entretien des planchers (stripping & waxing disponible)</li>
+                    </ul>
+                    <h3>Options de Fréquence:</h3>
+                    <ul>
+                        <li>Quotidien</li>
+                        <li>Hebdomadaire</li>
+                        <li>Bi-hebdomadaire</li>
+                        <li>Mensuel</li>
+                        <li>Sur demande</li>
+                    </ul>
+                    <a href="#soumission" class="btn btn-primary mt-2" onclick="showSection('soumission')">Demander une soumission</a>
+                </div>
+
+                <div class="service-detail">
+                    <h2>🛋️ Entretien Textile Professionnel</h2>
+                    <p>Nos techniciens certifiés utilisent des équipements de pointe et des produits professionnels pour redonner vie à vos textiles.</p>
+                    <h3>Services Disponibles:</h3>
+                    <ul>
+                        <li>Nettoyage de tapis et carpettes (toutes dimensions)</li>
+                        <li>Sofas et causeuses (tissu et cuir)</li>
+                        <li>Fauteuils et chaises rembourrées</li>
+                        <li>Matelas et sommiers</li>
+                        <li>Nettoyage d'intérieur de voiture</li>
+                        <li>Rideaux et draperies</li>
+                        <li>Élimination des taches tenaces</li>
+                        <li>Désodorisation et traitement antibactérien</li>
+                    </ul>
+                    <h3>Avantages:</h3>
+                    <ul>
+                        <li>Prolonge la durée de vie de vos textiles</li>
+                        <li>Élimine les allergènes et acariens</li>
+                        <li>Enlève les odeurs tenaces</li>
+                        <li>Redonne fraîcheur et éclat</li>
+                    </ul>
+                    <a href="#reservation" class="btn btn-primary mt-2" onclick="showSection('reservation')">Réserver ce service</a>
+                </div>
+
+                <div class="service-detail">
+                    <h2>🔨 Nettoyage Après Construction</h2>
+                    <p>Transformez votre espace fraîchement rénové en un environnement prêt à vivre ou à occuper.</p>
+                    <h3>Services Inclus:</h3>
+                    <ul>
+                        <li>Élimination complète de la poussière de construction</li>
+                        <li>Nettoyage approfondi des fenêtres (intérieur et extérieur)</li>
+                        <li>Enlèvement des étiquettes et résidus de colle</li>
+                        <li>Nettoyage des armoires et tiroirs</li>
+                        <li>Lavage complet des planchers</li>
+                        <li>Nettoyage des plinthes et cadres de porte</li>
+                        <li>Sanitaires complets</li>
+                        <li>Enlèvement des débris légers</li>
+                    </ul>
+                    <a href="#soumission" class="btn btn-primary mt-2" onclick="showSection('soumission')">Demander une soumission</a>
+                </div>
+
+                <div class="service-detail">
+                    <h2>✨ Nettoyage en Profondeur (Deep Cleaning)</h2>
+                    <p>Un grand ménage complet et minutieux qui redonne à votre espace son éclat d'origine.</p>
+                    <h3>Services Inclus:</h3>
+                    <ul>
+                        <li>Tous les services du nettoyage résidentiel</li>
+                        <li>Intérieur des électroménagers (four, réfrigérateur, micro-ondes)</li>
+                        <li>Intérieur des armoires et tiroirs</li>
+                        <li>Plinthes et cadres de porte</li>
+                        <li>Luminaires et ventilateurs de plafond</li>
+                        <li>Interrupteurs et poignées de porte</li>
+                        <li>Fenêtres et cadres</li>
+                        <li>Désinfection complète</li>
+                    </ul>
+                    <h3>Idéal Pour:</h3>
+                    <ul>
+                        <li>Changement de saison</li>
+                        <li>Emménagement ou déménagement</li>
+                        <li>Préparation d'événements</li>
+                        <li>Remise à neuf complète</li>
+                    </ul>
+                    <a href="#reservation" class="btn btn-primary mt-2" onclick="showSection('reservation')">Réserver ce service</a>
+                </div>
+
+                <div class="service-detail">
+                    <h2>🔄 Services Récurrents</h2>
+                    <p>Maintenez votre espace toujours impeccable avec nos forfaits d'entretien régulier.</p>
+                    <h3>Options de Fréquence:</h3>
+                    <ul>
+                        <li><strong>Hebdomadaire:</strong> Idéal pour familles occupées ou espaces commerciaux</li>
+                        <li><strong>Bi-hebdomadaire:</strong> Option populaire pour entretien optimal</li>
+                        <li><strong>Mensuel:</strong> Parfait pour compléter votre routine de nettoyage</li>
+                    </ul>
+                    <h3>Avantages:</h3>
+                    <ul>
+                        <li>Tarifs préférentiels pour clients réguliers</li>
+                        <li>Même équipe à chaque visite</li>
+                        <li>Planification flexible</li>
+                        <li>Priorité pour les rendez-vous</li>
+                        <li>Gestion personnalisée de vos préférences</li>
+                    </ul>
+                    <a href="#soumission" class="btn btn-primary mt-2" onclick="showSection('soumission')">Demander une soumission</a>
+                </div>
+
+                <div class="service-detail">
+                    <h2>🧼 Désinfection et Sanitisation</h2>
+                    <p>Services spécialisés de désinfection pour un environnement sain et sécuritaire.</p>
+                    <h3>Services Inclus:</h3>
+                    <ul>
+                        <li>Désinfection des surfaces à contact élevé</li>
+                        <li>Traitement antibactérien professionnel</li>
+                        <li>Produits homologués et sécuritaires</li>
+                        <li>Idéal pour résidences et commerces</li>
+                    </ul>
+                    <a href="#reservation" class="btn btn-primary mt-2" onclick="showSection('reservation')">Réserver ce service</a>
+                </div>
+
+                <div class="service-detail">
+                    <h2>💎 Entretien des Planchers</h2>
+                    <p>Services spécialisés pour maintenir vos planchers en parfait état.</p>
+                    <h3>Services Disponibles:</h3>
+                    <ul>
+                        <li>Stripping et décapage</li>
+                        <li>Application de cire et polissage</li>
+                        <li>Nettoyage de tapis commercial</li>
+                        <li>Traitement de planchers de bois franc</li>
+                        <li>Nettoyage de céramique et coulis</li>
+                    </ul>
+                    <a href="#soumission" class="btn btn-primary mt-2" onclick="showSection('soumission')">Demander une soumission</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Gallery Page -->
+    <div id="galerie" class="page-content hidden">
+        <div class="page-header">
+            <h1>Notre Galerie</h1>
+            <p>Découvrez la qualité de notre travail à travers nos réalisations</p>
+        </div>
+        <section class="page-section" style="background: var(--light-bg);">
+            <div class="content-container">
+                <h2 class="section-title">Avant / Après</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">📸</div>
+                        <div class="gallery-label">Cuisine - Avant/Après</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">📸</div>
+                        <div class="gallery-label">Salle de bain - Avant/Après</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">📸</div>
+                        <div class="gallery-label">Salon - Avant/Après</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">📸</div>
+                        <div class="gallery-label">Bureau - Avant/Après</div>
+                    </div>
+                </div>
+
+                <h2 class="section-title mt-2">Nettoyage Résidentiel</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">🏠</div>
+                        <div class="gallery-label">Cuisine moderne</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">🏠</div>
+                        <div class="gallery-label">Salon contemporain</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">🏠</div>
+                        <div class="gallery-label">Chambre à coucher</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">🏠</div>
+                        <div class="gallery-label">Salle de bain spa</div>
+                    </div>
+                </div>
+
+                <h2 class="section-title mt-2">Projets Commerciaux</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">🏢</div>
+                        <div class="gallery-label">Espace bureau</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">🏢</div>
+                        <div class="gallery-label">Hall d'entrée</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">🏢</div>
+                        <div class="gallery-label">Salle de conférence</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">🏢</div>
+                        <div class="gallery-label">Immeuble résidentiel</div>
+                    </div>
+                </div>
+
+                <h2 class="section-title mt-2">Entretien Textile</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">🛋️</div>
+                        <div class="gallery-label">Nettoyage de sofa</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">🛋️</div>
+                        <div class="gallery-label">Tapis restauré</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">🛋️</div>
+                        <div class="gallery-label">Matelas nettoyé</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">🛋️</div>
+                        <div class="gallery-label">Intérieur auto</div>
+                    </div>
+                </div>
+
+                <h2 class="section-title mt-2">Projets Spéciaux</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">✨</div>
+                        <div class="gallery-label">Après construction</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">✨</div>
+                        <div class="gallery-label">Deep cleaning</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">✨</div>
+                        <div class="gallery-label">Déménagement</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">✨</div>
+                        <div class="gallery-label">Événement spécial</div>
+                    </div>
+                </div>
+
+                <div class="info-box mt-2">
+                    <h4>📸 Vous voulez voir vos photos ici?</h4>
+                    <p>Partagez vos photos avant/après avec nous et recevez un rabais sur votre prochain service! Contactez-nous pour plus de détails.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Booking Page -->
+    <div id="reservation" class="page-content hidden">
+        <div class="page-header">
+            <h1>Réservez Votre Service</h1>
+            <p>Choisissez votre service et planifiez votre rendez-vous en quelques clics</p>
+        </div>
+        <section class="page-section" style="background: var(--light-bg);">
+            <div class="content-container">
+                <form class="booking-form" id="booking-form">
+                    <h2>Informations de Contact</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="booking-name">Nom complet *</label>
+                            <input type="text" id="booking-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-email">Courriel *</label>
+                            <input type="email" id="booking-email" name="to_email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-phone">Téléphone *</label>
+                            <input type="tel" id="booking-phone" name="phone" required>
+                        </div>
+                    </div>
+
+                    <h2 class="mt-2">Détails du Service</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="booking-service">Type de service *</label>
+                            <select id="booking-service" name="service" required>
+                                <option value="">Sélectionnez un service</option>
+                                <option value="Nettoyage Résidentiel">Nettoyage Résidentiel</option>
+                                <option value="Nettoyage Commercial">Nettoyage Commercial</option>
+                                <option value="Entretien Textile">Entretien Textile</option>
+                                <option value="Après Construction">Après Construction</option>
+                                <option value="Nettoyage en Profondeur">Nettoyage en Profondeur</option>
+                                <option value="Service Récurrent">Service Récurrent</option>
+                                <option value="Désinfection">Désinfection</option>
+                                <option value="Entretien des Planchers">Entretien des Planchers</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-frequency">Fréquence</label>
+                            <select id="booking-frequency" name="frequency">
+                                <option value="Service unique">Service unique</option>
+                                <option value="Hebdomadaire">Hebdomadaire</option>
+                                <option value="Bi-hebdomadaire">Bi-hebdomadaire</option>
+                                <option value="Mensuel">Mensuel</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h2 class="mt-2">Adresse du Service</h2>
+                    <div class="form-group">
+                        <label for="booking-address">Adresse complète *</label>
+                        <input type="text" id="booking-address" name="address" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="booking-city">Ville *</label>
+                            <select id="booking-city" name="area" required>
+                                <option value="">Sélectionnez</option>
+                                <option value="Gatineau">Gatineau</option>
+                                <option value="Ottawa">Ottawa</option>
+                                <option value="Autre">Autre (dans les environs)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-postal">Code postal *</label>
+                            <input type="text" id="booking-postal" name="postal" required>
+                        </div>
+                    </div>
+
+                    <h2 class="mt-2">Informations sur l'Espace</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="booking-rooms">Nombre de pièces / chambres</label>
+                            <input type="number" id="booking-rooms" name="rooms" min="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-bathrooms">Nombre de salles de bain</label>
+                            <input type="number" id="booking-bathrooms" name="bathrooms" min="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-sqft">Superficie approximative (pi²)</label>
+                            <input type="number" id="booking-sqft" name="sqft" min="100">
+                        </div>
+                    </div>
+
+                    <h2 class="mt-2">Date et Heure Préférées</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="booking-date">Date souhaitée *</label>
+                            <input type="date" id="booking-date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-time">Heure préférée *</label>
+                            <select id="booking-time" name="time" required>
+                                <option value="">Sélectionnez</option>
+                                <option value="Matin (8h-12h)">Matin (8h-12h)</option>
+                                <option value="Après-midi (12h-17h)">Après-midi (12h-17h)</option>
+                                <option value="Flexible">Flexible</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h2 class="mt-2">Options Additionnelles</h2>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="option-eco" name="option_eco" value="Produits écologiques">
+                            <label for="option-eco">Produits écologiques</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="option-windows" name="option_windows" value="Nettoyage des fenêtres">
+                            <label for="option-windows">Nettoyage des fenêtres</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="option-appliances" name="option_appliances" value="Intérieur des électroménagers">
+                            <label for="option-appliances">Intérieur des électroménagers</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="option-pets" name="option_pets" value="Animaux de compagnie présents">
+                            <label for="option-pets">Animaux de compagnie présents</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label for="booking-notes">Notes ou instructions spéciales</label>
+                        <textarea id="booking-notes" name="message" placeholder="Ex: Accès au stationnement, code d'entrée, préférences particulières..."></textarea>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>⚡ Confirmation rapide</h4>
+                        <p>Nous vous contacterons dans les 24 heures pour confirmer votre réservation et finaliser les détails.</p>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="booking-submit-btn">Soumettre ma Réservation</button>
+                    <div id="booking-status" style="margin-top: 1rem; text-align: center; font-weight: bold;"></div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Quote Page -->
+    <div id="soumission" class="page-content hidden">
+        <div class="page-header">
+            <h1>Demande de Soumission Gratuite</h1>
+            <p>Recevez une estimation détaillée en moins de 24 heures</p>
+        </div>
+        <section class="page-section" style="background: var(--light-bg);">
+            <div class="content-container">
+                <form class="booking-form" id="quote-form">
+                    <h2>Vos Coordonnées</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="quote-name">Nom complet *</label>
+                            <input type="text" id="quote-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="quote-company">Nom de l'entreprise (si applicable)</label>
+                            <input type="text" id="quote-company" name="company">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="quote-email">Courriel *</label>
+                            <input type="email" id="quote-email" name="to_email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="quote-phone">Téléphone *</label>
+                            <input type="tel" id="quote-phone" name="phone" required>
+                        </div>
+                    </div>
+
+                    <h2 class="mt-2">Type de Projet</h2>
+                    <div class="form-group">
+                        <label for="quote-service">Services demandés *</label>
+                        <select id="quote-service" name="service" required>
+                            <option value="">Sélectionnez un service</option>
+                            <option value="Nettoyage Résidentiel">Nettoyage Résidentiel</option>
+                            <option value="Nettoyage Commercial">Nettoyage Commercial</option>
+                            <option value="Nettoyage de Tapis">Nettoyage de Tapis</option>
+                            <option value="Nettoyage de Sofas">Nettoyage de Sofas</option>
+                            <option value="Nettoyage de Matelas">Nettoyage de Matelas</option>
+                            <option value="Nettoyage Intérieur Auto">Nettoyage Intérieur Auto</option>
+                            <option value="Après Construction">Après Construction</option>
+                            <option value="Nettoyage en Profondeur">Nettoyage en Profondeur</option>
+                            <option value="Désinfection">Désinfection</option>
+                            <option value="Entretien des Planchers">Entretien des Planchers</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quote-type">Type de client *</label>
+                        <select id="quote-type" name="client_type" required>
+                            <option value="">Sélectionnez</option>
+                            <option value="Résidentiel">Résidentiel</option>
+                            <option value="Commercial">Commercial</option>
+                            <option value="Gestionnaire immobilier">Gestionnaire immobilier</option>
+                        </select>
+                    </div>
+
+                    <h2 class="mt-2">Détails de l'Espace</h2>
+                    <div class="form-group">
+                        <label for="quote-address">Adresse du nettoyage *</label>
+                        <input type="text" id="quote-address" name="address" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="quote-city">Ville *</label>
+                            <input type="text" id="quote-city" name="area" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="quote-postal">Code postal *</label>
+                            <input type="text" id="quote-postal" name="postal" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="quote-sqft">Superficie totale (pi²)</label>
+                            <input type="number" id="quote-sqft" name="sqft" min="100">
+                        </div>
+                        <div class="form-group">
+                            <label for="quote-rooms">Nombre de pièces/chambres</label>
+                            <input type="number" id="quote-rooms" name="rooms" min="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="quote-bathrooms">Nombre de salles de bain</label>
+                            <input type="number" id="quote-bathrooms" name="bathrooms" min="1">
+                        </div>
+                    </div>
+
+                    <h2 class="mt-2">Fréquence et Calendrier</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="quote-frequency">Fréquence souhaitée *</label>
+                            <select id="quote-frequency" name="frequency" required>
+                                <option value="">Sélectionnez</option>
+                                <option value="Service unique">Service unique</option>
+                                <option value="Hebdomadaire">Hebdomadaire</option>
+                                <option value="Bi-hebdomadaire">Bi-hebdomadaire</option>
+                                <option value="Mensuel">Mensuel</option>
+                                <option value="Autre">Autre</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="quote-start">Date de début souhaitée</label>
+                            <input type="date" id="quote-start" name="date">
+                        </div>
+                    </div>
+
+                    <h2 class="mt-2">Description de Votre Besoin</h2>
+                    <div class="form-group">
+                        <label for="quote-description">Décrivez votre projet en détail *</label>
+                        <textarea id="quote-description" name="message" required placeholder="Ex: Type d'espace, état actuel, besoins spécifiques, zones problématiques, attentes particulières..."></textarea>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>⏱️ Réponse garantie en moins de 24 heures</h4>
+                        <p>Notre équipe analysera votre demande et vous contactera rapidement avec une soumission détaillée et personnalisée. Pour les projets urgents, n'hésitez pas à nous appeler directement au <strong>(873) 660-0507</strong>.</p>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="quote-submit-btn">Recevoir ma Soumission Gratuite</button>
+                    <div id="quote-status" style="margin-top: 1rem; text-align: center; font-weight: bold;"></div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Page -->
+    <div id="a-propos" class="page-content hidden">
+        <div class="page-header">
+            <h1>À Propos de Lux Clean Services Inc.</h1>
+            <p>Votre partenaire de confiance depuis plus de 5 ans</p>
+        </div>
+        <section class="page-section" style="background: var(--light-bg);">
+            <div class="content-container">
+                <div class="service-detail">
+                    <h2>Notre Mission</h2>
+                    <p>Chez Lux Clean Services Inc., notre mission est de fournir des services de nettoyage professionnels exceptionnels qui dépassent les attentes de nos clients. Nous croyons qu'un environnement propre et sain est essentiel au bien-être et à la productivité, que ce soit à la maison ou au travail.</p>
+                    <p>Nous nous engageons à offrir un service de qualité supérieure, fiable et personnalisé, tout en respectant l'environnement et en utilisant des produits et techniques qui garantissent la sécurité de nos clients et de notre équipe.</p>
+                </div>
+
+                <div class="about-grid mt-2">
+                    <div class="about-card">
+                        <h3>Nos Valeurs</h3>
+                        <ul>
+                            <li><strong>Excellence:</strong> Nous visons la perfection dans chaque détail</li>
+                            <li><strong>Intégrité:</strong> Honnêteté et transparence dans toutes nos interactions</li>
+                            <li><strong>Fiabilité:</strong> Vous pouvez compter sur nous, à chaque fois</li>
+                            <li><strong>Respect:</strong> De nos clients, de leur propriété et de l'environnement</li>
+                            <li><strong>Innovation:</strong> Techniques et produits à la fine pointe</li>
+                        </ul>
+                    </div>
+
+                    <div class="about-card">
+                        <h3>Notre Expertise</h3>
+                        <ul>
+                            <li>Plus de 5 années d'expérience dans l'industrie</li>
+                            <li>Équipe formée et certifiée en nettoyage professionnel</li>
+                            <li>Techniciens certifiés en entretien textile</li>
+                            <li>Formation continue sur les dernières techniques</li>
+                            <li>Équipements professionnels de pointe</li>
+                            <li>Assurance responsabilité complète</li>
+                        </ul>
+                    </div>
+
+                    <div class="about-card">
+                        <h3>Notre Engagement</h3>
+                        <ul>
+                            <li>Satisfaction client garantie à 100%</li>
+                            <li>Ponctualité et respect des horaires</li>
+                            <li>Tarification transparente sans frais cachés</li>
+                            <li>Réponse rapide à vos demandes (moins de 24h)</li>
+                            <li>Service personnalisé selon vos besoins</li>
+                            <li>Respect de la confidentialité et de la vie privée</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-detail mt-2">
+                    <h2>Pourquoi Choisir Lux Clean Services Inc.?</h2>
+                    <h3>🏆 Qualité Professionnelle</h3>
+                    <p>Nous utilisons uniquement des produits professionnels de qualité supérieure et des équipements à la fine pointe de la technologie. Notre équipe est formée aux meilleures pratiques de l'industrie pour garantir des résultats impeccables à chaque intervention.</p>
+
+                    <h3>✓ Fiabilité et Confiance</h3>
+                    <p>Tous nos employés sont vérifiés, formés et assurés. Vous pouvez nous confier votre espace en toute tranquillité d'esprit, sachant que nous le traiterons avec le plus grand soin et le plus grand respect.</p>
+
+                    <h3>🌿 Respect de l'Environnement</h3>
+                    <p>Nous offrons des options de produits écologiques pour tous nos services. Notre engagement envers l'environnement se reflète dans nos choix de produits et nos pratiques opérationnelles durables.</p>
+
+                    <h3>💯 Satisfaction Garantie</h3>
+                    <p>Si vous n'êtes pas entièrement satisfait de notre service, nous revenons gratuitement pour corriger la situation. Votre satisfaction est notre priorité absolue.</p>
+
+                    <h3>📞 Service Client Exceptionnel</h3>
+                    <p>Notre équipe est toujours disponible pour répondre à vos questions et s'adapter à vos besoins. Nous offrons une flexibilité d'horaire et une communication claire et rapide.</p>
+                </div>
+
+                <div class="service-detail mt-2">
+                    <h2>Zone de Service</h2>
+                    <p>Nous sommes fiers de servir les communautés de <strong>Gatineau, Ottawa et les environs</strong>. Notre couverture s'étend à toute la région de l'Outaouais et de l'Est ontarien, dans un rayon d'une heure de notre base d'opérations.</p>
+                    <h3>Régions Desservies:</h3>
+                    <ul>
+                        <li>Gatineau (tous les secteurs)</li>
+                        <li>Ottawa (toutes les zones)</li>
+                        <li>Aylmer</li>
+                        <li>Hull</li>
+                        <li>Buckingham</li>
+                        <li>Masson-Angers</li>
+                        <li>Cantley</li>
+                        <li>Chelsea</li>
+                        <li>Et les environs</li>
+                    </ul>
+                </div>
+
+                <div class="info-box mt-2">
+                    <h4>📞 Contactez-nous dès aujourd'hui!</h4>
+                    <p>Que ce soit pour une question, une demande de soumission ou pour planifier un service, notre équipe est prête à vous aider. Nous nous engageons à vous répondre dans les 24 heures.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page-content hidden">
+        <div class="page-header">
+            <h1>Contactez-Nous</h1>
+            <p>Nous sommes là pour répondre à toutes vos questions</p>
+        </div>
+        <section class="contact">
+            <div class="contact-container">
+                <div>
+                    <div class="contact-info">
+                        <h3>Coordonnées</h3>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">📞</div>
+                            <div>
+                                <strong>Téléphone</strong><br>
+                                <a href="tel:+18736600507">(873) 660-0507</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">📧</div>
+                            <div>
+                                <strong>Courriel</strong><br>
+                                <a href="mailto:info@cleanluxs.com">info@cleanluxs.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">💬</div>
+                            <div>
+                                <strong>WhatsApp</strong><br>
+                                <a href="https://wa.me/18736600507">(873) 660-0507</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">📍</div>
+                            <div>
+                                <strong>Zone de service</strong><br>
+                                Gatineau - Ottawa et environs
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-info" style="margin-top: 2rem;">
+                        <h3>Heures d'Ouverture</h3>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">🕐</div>
+                            <div>
+                                <strong>Lundi - Vendredi</strong><br>
+                                8h00 - 18h00
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">🕐</div>
+                            <div>
+                                <strong>Samedi</strong><br>
+                                9h00 - 17h00
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">🕐</div>
+                            <div>
+                                <strong>Dimanche</strong><br>
+                                Sur rendez-vous
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Envoyez-nous un Message</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="contact-name">Nom complet *</label>
+                            <input type="text" id="contact-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Courriel *</label>
+                            <input type="email" id="contact-email" name="to_email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-phone">Téléphone</label>
+                            <input type="tel" id="contact-phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">Sujet *</label>
+                            <select id="contact-subject" name="subject" required>
+                                <option value="">Sélectionnez un sujet</option>
+                                <option value="Question générale">Question générale</option>
+                                <option value="Demande de soumission">Demande de soumission</option>
+                                <option value="Réservation">Réservation</option>
+                                <option value="Service après-vente">Service après-vente</option>
+                                <option value="Autre">Autre</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Message *</label>
+                            <textarea id="contact-message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" id="contact-submit-btn">Envoyer le Message</button>
+                        <div id="contact-status" style="margin-top: 1rem; text-align: center; font-weight: bold;"></div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="info-box" style="max-width: 1200px; margin: 3rem auto 0;">
+                <h4>⚡ Réponse Rapide Garantie</h4>
+                <p>Nous nous engageons à répondre à toutes les demandes dans les 24 heures ouvrables. Pour les urgences, n'hésitez pas à nous appeler directement.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Lux Clean Services Inc.</h3>
+                <p>Votre partenaire de confiance pour un nettoyage professionnel à Gatineau et Ottawa.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">📘</a>
+                    <a href="#" class="social-link">📷</a>
+                    <a href="#" class="social-link">🐦</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#services" onclick="showSection('services')">Nettoyage Résidentiel</a></li>
+                    <li><a href="#services" onclick="showSection('services')">Nettoyage Commercial</a></li>
+                    <li><a href="#services" onclick="showSection('services')">Entretien Textile</a></li>
+                    <li><a href="#services" onclick="showSection('services')">Services Récurrents</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Liens Rapides</h3>
+                <ul>
+                    <li><a href="#accueil" onclick="showSection('accueil')">Accueil</a></li>
+                    <li><a href="#a-propos" onclick="showSection('a-propos')">À propos</a></li>
+                    <li><a href="#galerie" onclick="showSection('galerie')">Galerie</a></li>
+                    <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul>
+                    <li>📞 (873) 660-0507</li>
+                    <li>📧 info@cleanluxs.com</li>
+                    <li>📍 Gatineau - Ottawa</li>
+                    <li>🕐 Lun-Ven: 8h-18h</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Lux Clean Services Inc. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.page-content');
+            sections.forEach(section => section.classList.add('hidden'));
+            
+            // Show selected section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+            
+            // Close mobile menu if open
+            const navMenu = document.getElementById('navMenu');
+            if (window.innerWidth <= 768) {
+                navMenu.style.display = 'none';
+            }
+        }
+
+        function toggleMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
+            if (navMenu.style.display === 'flex') {
+                navMenu.style.display = 'none';
+            } else {
+                navMenu.style.display = 'flex';
+            }
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Responsive menu handling
+        window.addEventListener('resize', function() {
+            const navMenu = document.getElementById('navMenu');
+            if (window.innerWidth > 768) {
+                navMenu.style.display = 'flex';
+            } else {
+                navMenu.style.display = 'none';
+            }
+        });
+
+        // Set minimum date for booking forms to today
+        window.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            const dateInputs = document.querySelectorAll('input[type="date"]');
+            dateInputs.forEach(input => {
+                input.min = today;
+            });
+
+            // Vérifier si EmailJS est chargé
+            if (typeof emailjs === 'undefined') {
+                console.error('EmailJS n\'est pas chargé!');
+                alert('Erreur: EmailJS n\'est pas chargé. Veuillez rafraîchir la page.');
+                return;
+            }
+
+            // EmailJS Integration
+            try {
+                emailjs.init('wHwSGCZ5MRdsfMaJa');
+                console.log('EmailJS initialisé avec succès');
+            } catch(e) {
+                console.error('Erreur initialisation EmailJS:', e);
+                alert('Erreur d\'initialisation EmailJS: ' + e.message);
+            }
+
+            // Formulaire de Réservation - template_yauian5
+            const bookingForm = document.getElementById('booking-form');
+            console.log('Formulaire de réservation trouvé:', bookingForm ? 'OUI' : 'NON');
+            
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    console.log('Formulaire de réservation soumis!');
+                    
+                    const submitBtn = document.getElementById('booking-submit-btn');
+                    const statusDiv = document.getElementById('booking-status');
+                    
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Envoi en cours...';
+                    statusDiv.textContent = '⏳ Connexion à EmailJS...';
+                    statusDiv.style.color = '#007bff';
+                    
+                    // Collecter les options cochées
+                    const options = [];
+                    const optionEco = document.getElementById('option-eco');
+                    const optionWindows = document.getElementById('option-windows');
+                    const optionAppliances = document.getElementById('option-appliances');
+                    const optionPets = document.getElementById('option-pets');
+                    
+                    if (optionEco && optionEco.checked) options.push('Produits écologiques');
+                    if (optionWindows && optionWindows.checked) options.push('Nettoyage des fenêtres');
+                    if (optionAppliances && optionAppliances.checked) options.push('Intérieur des électroménagers');
+                    if (optionPets && optionPets.checked) options.push('Animaux de compagnie présents');
+                    
+                    const roomsValue = document.getElementById('booking-rooms').value || 'Non spécifié';
+                    const bathroomsValue = document.getElementById('booking-bathrooms').value || 'Non spécifié';
+                    const sqftValue = document.getElementById('booking-sqft').value || 'Non spécifié';
+                    
+                    const templateParams = {
+                        name: document.getElementById('booking-name').value,
+                        to_email: document.getElementById('booking-email').value,
+                        phone: document.getElementById('booking-phone').value,
+                        service: document.getElementById('booking-service').value,
+                        address: document.getElementById('booking-address').value,
+                        area: document.getElementById('booking-city').value,
+                        date: document.getElementById('booking-date').value,
+                        time: document.getElementById('booking-time').value,
+                        total: 'À déterminer lors de la confirmation',
+                        message: (document.getElementById('booking-notes').value || 'Aucune note') + '\n\nOptions: ' + (options.length > 0 ? options.join(', ') : 'Aucune') + '\n\nPièces: ' + roomsValue + '\nSalles de bain: ' + bathroomsValue + '\nSuperficie: ' + sqftValue + ' pi²'
+                    };
+                    
+                    console.log('Paramètres du template:', templateParams);
+                    
+                    emailjs.send('service_86wlqpl', 'template_yauian5', templateParams)
+                        .then(function(response) {
+                            console.log('SUCCESS!', response.status, response.text);
+                            statusDiv.style.color = '#28a745';
+                            statusDiv.textContent = '✅ Réservation envoyée avec succès! Nous vous contacterons sous peu.';
+                            bookingForm.reset();
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Soumettre ma Réservation';
+                        }, function(error) {
+                            console.error('ERREUR EmailJS:', error);
+                            statusDiv.style.color = '#dc3545';
+                            statusDiv.textContent = '❌ Erreur: ' + (error.text || error.message || 'Erreur inconnue') + '. Appelez-nous au (873) 660-0507.';
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Soumettre ma Réservation';
+                        });
+                });
+                console.log('Listener ajouté au formulaire de réservation');
+            }
+
+            // Formulaire de Soumission - template_xd7xsib
+            const quoteForm = document.getElementById('quote-form');
+            console.log('Formulaire de soumission trouvé:', quoteForm ? 'OUI' : 'NON');
+            
+            if (quoteForm) {
+                quoteForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    console.log('Formulaire de soumission soumis!');
+                    
+                    const submitBtn = document.getElementById('quote-submit-btn');
+                    const statusDiv = document.getElementById('quote-status');
+                    
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Envoi en cours...';
+                    statusDiv.textContent = '⏳ Connexion à EmailJS...';
+                    statusDiv.style.color = '#007bff';
+                    
+                    const templateParams = {
+                        name: document.getElementById('quote-name').value,
+                        to_email: document.getElementById('quote-email').value,
+                        phone: document.getElementById('quote-phone').value,
+                        service: document.getElementById('quote-service').value,
+                        address: document.getElementById('quote-address').value,
+                        area: document.getElementById('quote-city').value,
+                        message: 'DEMANDE DE SOUMISSION\n\n' +
+                                'Entreprise: ' + (document.getElementById('quote-company').value || 'N/A') + '\n' +
+                                'Type de client: ' + document.getElementById('quote-type').value + '\n' +
+                                'Code postal: ' + document.getElementById('quote-postal').value + '\n' +
+                                'Superficie: ' + (document.getElementById('quote-sqft').value || 'N/A') + ' pi²\n' +
+                                'Pièces: ' + (document.getElementById('quote-rooms').value || 'N/A') + '\n' +
+                                'Salles de bain: ' + (document.getElementById('quote-bathrooms').value || 'N/A') + '\n' +
+                                'Fréquence: ' + document.getElementById('quote-frequency').value + '\n' +
+                                'Date de début: ' + (document.getElementById('quote-start').value || 'N/A') + '\n\n' +
+                                'Description:\n' + document.getElementById('quote-description').value
+                    };
+                    
+                    console.log('Paramètres du template soumission:', templateParams);
+                    
+                    emailjs.send('service_86wlqpl', 'template_xd7xsib', templateParams)
+                        .then(function(response) {
+                            console.log('SUCCESS!', response.status, response.text);
+                            statusDiv.style.color = '#28a745';
+                            statusDiv.textContent = '✅ Demande de soumission envoyée! Nous vous contacterons dans les 24 heures.';
+                            quoteForm.reset();
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Recevoir ma Soumission Gratuite';
+                        }, function(error) {
+                            console.error('ERREUR EmailJS:', error);
+                            statusDiv.style.color = '#dc3545';
+                            statusDiv.textContent = '❌ Erreur: ' + (error.text || error.message || 'Erreur inconnue') + '. Appelez-nous au (873) 660-0507.';
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Recevoir ma Soumission Gratuite';
+                        });
+                });
+                console.log('Listener ajouté au formulaire de soumission');
+            }
+
+            // Formulaire de Contact - template_yauian5
+            const contactForm = document.getElementById('contact-form');
+            console.log('Formulaire de contact trouvé:', contactForm ? 'OUI' : 'NON');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    console.log('Formulaire de contact soumis!');
+                    
+                    const submitBtn = document.getElementById('contact-submit-btn');
+                    const statusDiv = document.getElementById('contact-status');
+                    
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Envoi en cours...';
+                    statusDiv.textContent = '⏳ Connexion à EmailJS...';
+                    statusDiv.style.color = '#007bff';
+                    
+                    const templateParams = {
+                        name: document.getElementById('contact-name').value,
+                        to_email: document.getElementById('contact-email').value,
+                        phone: document.getElementById('contact-phone').value || 'Non fourni',
+                        service: document.getElementById('contact-subject').value,
+                        address: 'Contact général',
+                        area: 'Gatineau-Ottawa',
+                        date: new Date().toLocaleDateString('fr-CA'),
+                        time: new Date().toLocaleTimeString('fr-CA', {hour: '2-digit', minute: '2-digit'}),
+                        total: 'N/A',
+                        message: document.getElementById('contact-message').value
+                    };
+                    
+                    console.log('Paramètres du template contact:', templateParams);
+                    
+                    emailjs.send('service_86wlqpl', 'template_yauian5', templateParams)
+                        .then(function(response) {
+                            console.log('SUCCESS!', response.status, response.text);
+                            statusDiv.style.color = '#28a745';
+                            statusDiv.textContent = '✅ Message envoyé avec succès! Nous vous répondrons rapidement.';
+                            contactForm.reset();
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Envoyer le Message';
+                        }, function(error) {
+                            console.error('ERREUR EmailJS:', error);
+                            statusDiv.style.color = '#dc3545';
+                            statusDiv.textContent = '❌ Erreur: ' + (error.text || error.message || 'Erreur inconnue') + '. Appelez-nous au (873) 660-0507.';
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Envoyer le Message';
+                        });
+                });
+                console.log('Listener ajouté au formulaire de contact');
+            }
+            
+            console.log('=== Initialisation terminée ===');
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</body>
+</html>
